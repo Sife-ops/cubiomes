@@ -112,7 +112,7 @@ int main(int argc, char *argv[])
             continue;
 
         Pos fortress;
-        int fortressProximity = 256;
+        int fortressProximity = 128;
         int isFortressNearby = 0;
         for (int i = 0; i < 4; i++)
         {
