@@ -142,52 +142,52 @@ int main(int argc, char *argv[])
         if (!isFortressNearby)
             continue;
 
-        {
-            Range r;
-            r.scale = 1;
-            r.x = spawn.x - 128, r.z = spawn.z - 128; // position (x,z)
-            r.sx = 256, r.sz = 256;                   // size (width,height)
-            r.y = 15, r.sy = 1;
-
-            int *biomeIds = allocCache(&generator_ow, r);
-            genBiomes(&generator_ow, biomeIds, r);
-
-            int avx = abs(spawn.x - shipwreck.x);
-            int avz = abs(spawn.z - shipwreck.z);
-            int osx;
-            if (spawn.x > shipwreck.x)
-            {
-                osx = 128 - avx;
-            }
-            else
-            {
-                osx = 128 + avx;
-            }
-            int osz;
-            if (spawn.z > shipwreck.z)
-            {
-                osz = 128 - avz;
-            }
-            else
-            {
-                osz = 128 + avz;
-            }
-            drawSquare(biomeIds, osx, osz, crimson_forest);
-
-            int pix4cell = 4;
-            int imgWidth = pix4cell * r.sx, imgHeight = pix4cell * r.sz;
-            unsigned char biomeColors[256][3];
-            initBiomeColors(biomeColors);
-            unsigned char *rgb = (unsigned char *)malloc(3 * imgWidth * imgHeight);
-            biomesToImage(rgb, biomeColors, biomeIds, r.sx, r.sz, pix4cell, 2);
-
-            char previewPath[strlen(argv[1]) + strlen("/preview/overworld:.ppm") + 20];
-            sprintf(previewPath, "%s/preview/overworld:%" PRId64 ".ppm", argv[1], (int64_t)seed);
-            savePPM(previewPath, rgb, imgWidth, imgHeight);
-
-            free(biomeIds);
-            free(rgb);
-        }
+        // {
+        //     Range r;
+        //     r.scale = 1;
+        //     r.x = spawn.x - 128, r.z = spawn.z - 128; // position (x,z)
+        //     r.sx = 256, r.sz = 256;                   // size (width,height)
+        //     r.y = 15, r.sy = 1;
+        //
+        //     int *biomeIds = allocCache(&generator_ow, r);
+        //     genBiomes(&generator_ow, biomeIds, r);
+        //
+        //     int avx = abs(spawn.x - shipwreck.x);
+        //     int avz = abs(spawn.z - shipwreck.z);
+        //     int osx;
+        //     if (spawn.x > shipwreck.x)
+        //     {
+        //         osx = 128 - avx;
+        //     }
+        //     else
+        //     {
+        //         osx = 128 + avx;
+        //     }
+        //     int osz;
+        //     if (spawn.z > shipwreck.z)
+        //     {
+        //         osz = 128 - avz;
+        //     }
+        //     else
+        //     {
+        //         osz = 128 + avz;
+        //     }
+        //     drawSquare(biomeIds, osx, osz, crimson_forest);
+        //
+        //     int pix4cell = 4;
+        //     int imgWidth = pix4cell * r.sx, imgHeight = pix4cell * r.sz;
+        //     unsigned char biomeColors[256][3];
+        //     initBiomeColors(biomeColors);
+        //     unsigned char *rgb = (unsigned char *)malloc(3 * imgWidth * imgHeight);
+        //     biomesToImage(rgb, biomeColors, biomeIds, r.sx, r.sz, pix4cell, 2);
+        //
+        //     char previewPath[strlen(argv[1]) + strlen("/preview/overworld:.ppm") + 20];
+        //     sprintf(previewPath, "%s/preview/overworld:%" PRId64 ".ppm", argv[1], (int64_t)seed);
+        //     savePPM(previewPath, rgb, imgWidth, imgHeight);
+        //
+        //     free(biomeIds);
+        //     free(rgb);
+        // }
 
         // {
         //     Range r;
