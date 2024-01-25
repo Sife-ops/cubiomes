@@ -189,55 +189,56 @@ int main(int argc, char *argv[])
             free(rgb);
         }
 
-        {
-            Range r;
-            r.scale = 1;
-            r.x = spawn.x - 128, r.z = spawn.z - 128; // position (x,z)
-            r.sx = 256, r.sz = 256;                   // size (width,height)
-            r.y = 15, r.sy = 1;
+        // {
+        //     Range r;
+        //     r.scale = 1;
+        //     r.x = spawn.x - 128, r.z = spawn.z - 128; // position (x,z)
+        //     r.sx = 256, r.sz = 256;                   // size (width,height)
+        //     r.y = 15, r.sy = 1;
+        //
+        //     int *biomeIds = allocCache(&generator_n, r);
+        //     genBiomes(&generator_n, biomeIds, r);
+        //     log = fopen("dev.log", "a+");
+        //     fprintf(log, "generated biomes: nether\n");
+        //     fclose(log);
+        //
+        //     drawSquare(biomeIds, 128 + bastion.x, 128 + bastion.z, beach);
+        //     log = fopen("dev.log", "a+");
+        //     fprintf(log, "located bastion\n");
+        //     fclose(log);
+        //
+        //     if (
+        //         fortress.x <= 128 &&
+        //         fortress.z <= 128 &&
+        //         fortress.x >= -128 &&
+        //         fortress.z >= -128
+        //         //
+        //     )
+        //     {
+        //         drawSquare(biomeIds, 128 + fortress.z, 128 + fortress.z, warm_ocean);
+        //         log = fopen("dev.log", "a+");
+        //         fprintf(log, "located fortress\n");
+        //         fclose(log);
+        //     }
+        //
+        //     int pix4cell = 4;
+        //     int imgWidth = pix4cell * r.sx, imgHeight = pix4cell * r.sz;
+        //     unsigned char biomeColors[256][3];
+        //     initBiomeColors(biomeColors);
+        //     unsigned char *rgb = (unsigned char *)malloc(3 * imgWidth * imgHeight);
+        //     biomesToImage(rgb, biomeColors, biomeIds, r.sx, r.sz, pix4cell, 2);
+        //
+        //     char previewPath[strlen(argv[1]) + strlen("/preview/nether:.ppm") + 20];
+        //     sprintf(previewPath, "%s/preview/nether:%" PRId64 ".ppm", argv[1], (int64_t)seed);
+        //     savePPM(previewPath, rgb, imgWidth, imgHeight);
+        //
+        //     free(biomeIds);
+        //     free(rgb);
+        // }
 
-            int *biomeIds = allocCache(&generator_n, r);
-            genBiomes(&generator_n, biomeIds, r);
-            log = fopen("dev.log", "a+");
-            fprintf(log, "generated biomes: nether\n");
-            fclose(log);
-
-            drawSquare(biomeIds, 128 + bastion.x, 128 + bastion.z, beach);
-            log = fopen("dev.log", "a+");
-            fprintf(log, "located bastion\n");
-            fclose(log);
-
-            if (
-                fortress.x <= 128 &&
-                fortress.z <= 128 &&
-                fortress.x >= -128 &&
-                fortress.z >= -128
-                //
-            )
-            {
-                drawSquare(biomeIds, 128 + fortress.z, 128 + fortress.z, warm_ocean);
-                log = fopen("dev.log", "a+");
-                fprintf(log, "located fortress\n");
-                fclose(log);
-            }
-
-            int pix4cell = 4;
-            int imgWidth = pix4cell * r.sx, imgHeight = pix4cell * r.sz;
-            unsigned char biomeColors[256][3];
-            initBiomeColors(biomeColors);
-            unsigned char *rgb = (unsigned char *)malloc(3 * imgWidth * imgHeight);
-            biomesToImage(rgb, biomeColors, biomeIds, r.sx, r.sz, pix4cell, 2);
-
-            char previewPath[strlen(argv[1]) + strlen("/preview/nether:.ppm") + 20];
-            sprintf(previewPath, "%s/preview/nether:%" PRId64 ".ppm", argv[1], (int64_t)seed);
-            savePPM(previewPath, rgb, imgWidth, imgHeight);
-
-            free(biomeIds);
-            free(rgb);
-        }
-
-        printf("%" PRId64 "\n", (int64_t)seed);
-
+        //
+        printf("%" PRId64 ":%d,%d:%d,%d", (int64_t)seed, spawn.x, spawn.z, shipwreck.x, shipwreck.z);
         return 0;
+        //
     }
 }
