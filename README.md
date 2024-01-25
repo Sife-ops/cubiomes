@@ -1,3 +1,7 @@
+# EXPERIMENTAL
+
+You must use [and experimental go-mc fork](https://github.com/Sife-ops/go-mc/tree/experimental).
+
 # cubiomes
 
 Cubiomes is a standalone library, written in C, that mimics the biome and feature generation of Minecraft Java Edition.
