@@ -57,6 +57,9 @@ util.o: util.c util.h
 quadbase.o: quadbase.c quadbase.h
 	$(CC) -c $(CFLAGS) $<
 
+g0: libcubiomes.a
+	$(CC) g0.c libcubiomes.a -fwrapv -lm
+
 clean:
 	$(RM) *.o *.a
 

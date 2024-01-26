@@ -10,7 +10,6 @@ docs/LayerSummary.toc
 *.a
 a.out
 
-foo.sh
 .vscode
 preview/
 dev.log
