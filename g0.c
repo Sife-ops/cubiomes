@@ -9,8 +9,6 @@
 #define OUTPUTLOG 0
 #define OUTPUTPPM 0
 
-FILE *log;
-
 int toRegXZ(int x)
 {
     if (x < 0)
@@ -37,6 +35,7 @@ void drawSquare(int *b, int x, int z, int color)
 
 int main(int argc, char *argv[])
 {
+    FILE *log;
     if (OUTPUTLOG > 0)
     {
         log = fopen("dev.log", "a+");
