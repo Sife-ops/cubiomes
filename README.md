@@ -1,6 +1,6 @@
 # EXPERIMENTAL
 
-You must use [and experimental go-mc fork](https://github.com/Sife-ops/go-mc/tree/experimental).
+You must use [and experimental go-mc fork](https://github.com/Sife-ops/go-mc/tree/experimental). `make g0` and drop `a.out` in ur `go-mc` folder.
 
 # cubiomes
 
