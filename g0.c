@@ -257,7 +257,15 @@ int main(int argc, char *argv[])
         }
 
     End:
-        printf("%" PRId64 ":%d,%d:%d,%d", (int64_t)seed, spawn.x, spawn.z, shipwreck.x, shipwreck.z);
+        printf(
+            "%" PRId64 ":%d,%d:%d,%d:%d,%d:%d,%d",
+            (int64_t)seed,
+            spawn.x, spawn.z,
+            shipwreck.x, shipwreck.z,
+            bastion.x, bastion.z,
+            fortress.x, fortress.z
+            //
+        );
         return 0;
     }
 }
