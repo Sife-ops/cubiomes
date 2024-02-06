@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     applySeed(&generator_n, DIM_NETHER, seed);
 
     Pos bastion;
-    int bastionProximity = 80;
+    int bastionProximity = 96;
     int isBastionNearby = 0;
     for (int i = 0; i < 4; i++)
     {
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
         return 33;
 
     Pos fortress;
-    int fortressProximity = 80;
+    int fortressProximity = 96;
     int isFortressNearby = 0;
     for (int i = 0; i < 4; i++)
     {
