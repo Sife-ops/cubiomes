@@ -77,7 +77,7 @@ int main(int argc, char *argv[])
     applySeed(&generator_n, DIM_NETHER, seed);
 
     Pos bastion;
-    int bastionProximity = 128;
+    int bastionProximity = 80;
     int isBastionNearby = 0;
     for (int i = 0; i < 4; i++)
     {
@@ -108,7 +108,7 @@ int main(int argc, char *argv[])
         return 33;
 
     Pos fortress;
-    int fortressProximity = 128;
+    int fortressProximity = 80;
     int isFortressNearby = 0;
     for (int i = 0; i < 4; i++)
     {
@@ -247,6 +247,7 @@ int main(int argc, char *argv[])
         free(biomeIds);
         free(rgb);
     }
+
 SkipPpm:
 
     printf(
@@ -259,4 +260,4 @@ SkipPpm:
     );
     return 0;
 }
-// }
+
